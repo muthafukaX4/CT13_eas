@@ -19,6 +19,10 @@ vendor/lib64/libfastrpc_utf_stub.so
 vendor/lib64/libmdsprpc.so
 vendor/lib64/libsdsprpc.so
 
+# Camera (GCAM required libs) - from Bonito SP2A.220505.008
+vendor/lib/lib_aion_buffer.so|a49aab8cb80f05b64c0c12a3970dba50d2dc4691
+vendor/lib64/lib_aion_buffer.so|3ab3ff99bff2b6f2884da2fc4b0cfa6d69e8e94b
+
 # CDSP
 vendor/bin/cdsprpcd
 vendor/lib/libcdsp_default_listener.so
