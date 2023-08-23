@@ -1,7 +1,5 @@
 # ART
 dalvik.vm.dex2oat64.enabled=true
-ro.vendor.qti.am.reschedule_service=true
-ro.sys.fw.dex2oat_thread_count=8
 dalvik.vm.boot-dex2oat-cpu-set=0,1,2,3,4,5,6,7
 dalvik.vm.boot-dex2oat-threads=8
 dalvik.vm.dex2oat-threads=8
@@ -16,12 +14,9 @@ dalvik.vm.minidebuginfo=false
 
 # Audio
 af.fast_track_multiplier=1
-af.resampler.quality=255
 audio.deep_buffer.media=true
 audio.offload.min.duration.secs=30
 audio.offload.video=true
-audio.sys.noisy.broadcast.delay=600
-audio.sys.offload.pstimeout.secs=3
 persist.vendor.audio.fluence.voicecall=true
 persist.vendor.audio.fluence.voicecomm=true
 persist.vendor.audio.fluence.voicerec=false
@@ -118,7 +113,6 @@ bluetooth.profile.pan.panu.enabled?=true
 bluetooth.profile.pbap.server.enabled?=true
 bluetooth.profile.sap.server.enabled?=true
 persist.vendor.bt.aac_frm_ctl.enabled=true
-persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxhd-aac
 persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxhd-aac
 persist.vendor.qcom.bluetooth.soc=cherokee
 persist.vendor.qcom.bluetooth.scram.enabled=true
@@ -154,43 +148,25 @@ debug.sf.enable_hwc_vds=1
 debug.sf.hw=1
 debug.sf.recomputecrop=0
 debug.sf.disable_client_composition_cache=1
-persist.hwc.mdpcomp.enable=true
 ro.opengles.version=196610
 vendor.display.disable_rotator_downscale=1
 vendor.display.disable_scaler=1
 
 # DPM
-persist.vendor.dpm.loglevel=0
 persist.vendor.dpmhalservice.enable=1
 
 # DRM
 drm.service.enabled=true
 
 # Fling
-ro.min.fling_velocity=160 
-ro.max.fling_velocity=20000
-ro.max.fling_velocity=20000 
-ro.vendor.qti.cgroup_follow.enable=true 
 persist.vendor.qti.inputopts.enable=true 
-persist.vendor.qti.inputopts.movetouchslop=0.6 
-ro.qcom.adreno.qgl.ShaderStorageImageExtendedFormats=0
+persist.vendor.qti.inputopts.movetouchslop=0.6
 
 # FM
-vendor.hw.fm.init=0
 vendor.fm.a2dp.conc.disabled=false
 
 # FRP
 ro.frp.pst=/dev/block/bootdevice/by-name/frp
-
-# GMS
-ro.com.google.clientidbase.ms=android-asus-tpin
-ro.com.google.rlzbrandcode=ASUP
-ro.com.google.rlz_ap_whitelist=y0,y5,y6,y7,y9
-
-# GPU
-rs.gpu.renderscript=0
-rs.gpu.filterscript=0
-rs.gpu.rsIntrinsic=0
 
 # Graphics
 ro.hardware.egl=adreno
@@ -198,9 +174,6 @@ ro.hardware.vulkan=sdm660
 
 # HEH filename encryption is being dropped
 ro.crypto.volume.filenames_mode=aes-256-cts
-
-# NTP Server
-persist.backup.ntpServer=0.pool.ntp.org
 
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
@@ -222,14 +195,9 @@ ro.telephony.default_network=20,20
 ro.com.android.dataroaming=false
 
 # Radio - IMS
-persist.dbg.ims_volte_enable=1
 persist.dbg.volte_avail_ovr=1
 persist.dbg.vt_avail_ovr=1
 persist.dbg.wfc_avail_ovr=1
-persist.vendor.ims.disableADBLogs=1
-persist.vendor.ims.disableDebugLogs=1
-persist.vendor.ims.disableIMSLogs=1
-persist.vendor.ims.disableQXDMLogs=1
 
 # Sensors
 ro.vendor.sdk.sensors.gestures=false

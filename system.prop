@@ -2,6 +2,16 @@
 # system.prop for sdm660
 #
 
+# ART
+ro.vendor.qti.am.reschedule_service=true
+ro.sys.fw.dex2oat_thread_count=8
+
+# Audio
+af.resampler.quality=255
+audio.sys.noisy.broadcast.delay=600
+audio.sys.offload.pstimeout.secs=3
+persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxhd-aac
+
 # Bluetooth
 bt.max.hfpclient.connections=1
 vendor.bluetooth.soc=cherokee
@@ -32,12 +42,34 @@ vendor.display.disable_inline_rotator=1
 vendor.display.disable_partial_split=1
 vendor.display.disable_skip_validate=1
 debug.sf.enable_transaction_tracing=false
+persist.hwc.mdpcomp.enable=true
 
 # DPM
 persist.vendor.dpm.feature=1
+persist.vendor.dpm.loglevel=0
+
+# Fling
+ro.min.fling_velocity=160 
+ro.max.fling_velocity=20000
+ro.max.fling_velocity=20000 
+ro.vendor.qti.cgroup_follow.enable=true 
+ro.qcom.adreno.qgl.ShaderStorageImageExtendedFormats=0
+
+# FM
+vendor.hw.fm.init=0
+
+# GMS
+ro.com.google.clientidbase.ms=android-asus-tpin
+ro.com.google.rlzbrandcode=ASUP
+ro.com.google.rlz_ap_whitelist=y0,y5,y6,y7,y9
 
 # GPS
 persist.vendor.overlay.izat.optin=rro
+
+# GPU
+rs.gpu.renderscript=0
+rs.gpu.filterscript=0
+rs.gpu.rsIntrinsic=0
 
 # Graphics
 persist.demo.hdmirotationlock=false
@@ -79,6 +111,13 @@ sys.fflag.override.settings_enable_monitor_phantom_procs=false
 
 # QC framework value-adds
 ro.vendor.qti.va_aosp.support=1
+
+# Radio
+persist.dbg.ims_volte_enable=1
+persist.vendor.ims.disableADBLogs=1
+persist.vendor.ims.disableDebugLogs=1
+persist.vendor.ims.disableIMSLogs=1
+persist.vendor.ims.disableQXDMLogs=1
 
 # RIL
 DEVICE_PROVISIONED=1
