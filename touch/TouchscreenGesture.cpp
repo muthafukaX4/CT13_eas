@@ -12,21 +12,32 @@
 #include <fstream>
 #include "TouchscreenGesture.h"
 
+namespace {
+typedef struct {
+    int32_t keycode;
+    const char* name;
+} GestureInfo;
+
+// id -> info
+const std::unordered_map<int32_t, GestureInfo> kGestureInfoMap = {
+    {0, {0x2ec, "Gesture W"}},
+    {1, {0x2ed, "Gesture e"}},
+    {2, {0x2ee, "Gesture S"}},
+    {3, {0x2ef, "Gesture Z"}},
+    {4, {0x2f0, "Gesture C"}},
+    {5, {0x2f1, "Gesture V"}},
+    {6, {0x2f6, "Gesture Swipe Up"}},
+};
+}  // anonymous namespace
+
 namespace vendor {
 namespace lineage {
 namespace touch {
 namespace V1_0 {
 namespace implementation {
 
-const std::map<int32_t, TouchscreenGesture::GestureInfo> TouchscreenGesture::kGestureInfoMap = {
-    {0, {249, "Letter C", "/proc/touchpanel/letter_c_enable"}},
-    {1, {250, "Letter e", "/proc/touchpanel/letter_e_enable"}},
-    {2, {251, "Letter S", "/proc/touchpanel/letter_s_enable"}},
-    {3, {252, "Letter V", "/proc/touchpanel/letter_v_enable"}},
-    {4, {253, "Letter W", "/proc/touchpanel/letter_w_enable"}},
-    {5, {254, "Letter Z", "/proc/touchpanel/letter_z_enable"}},
-    {6, {255, "One finger swipe up", "/proc/touchpanel/up_swipe_enable"}},
-};
+static constexpr const char* kGestureNodePath =
+    "/proc/tpd_gesture";
 
 Return<void> TouchscreenGesture::getSupportedGestures(getSupportedGestures_cb resultCb) {
     std::vector<Gesture> gestures;
@@ -46,9 +57,9 @@ Return<bool> TouchscreenGesture::setGestureEnabled(
         return false;
     }
 
-    std::ofstream file(entry->second.path);
+    std::ofstream file(kGestureNodePath);
     file << (enabled ? "1" : "0");
-    LOG(DEBUG) << "Wrote file " << entry->second.path << " fail " << file.fail();
+    LOG(DEBUG) << "Wrote file " << kGestureNodePath << " fail " << file.fail();
     return !file.fail();
 }
 
