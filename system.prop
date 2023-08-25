@@ -97,6 +97,9 @@ vendor.vidc.enc.disable_bframes=1
 vendor.vidc.dec.enable.downscalar=1
 vendor.vidc.enc.disable.pq=true
 
+# Maintainer
+ro.afterlife.maintainer=Old_Crocs
+
 # Netflix
 ro.netflix.bsp_rev=Q660-13149-1
 
